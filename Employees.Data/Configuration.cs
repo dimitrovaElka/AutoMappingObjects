@@ -4,6 +4,6 @@ namespace Employees.Data
     public class Configuration
     {
         public static string ConnectionString =>
-            @"Server=.;Database=EmploeesDb;Integrated Security=True";
+            @"Server=.;Database=EmployeesDb;Integrated Security=True";
     }
 }

@@ -11,6 +11,9 @@ namespace Employees.App
         {
             CreateMap<Employee, EmployeeDto>();
             CreateMap<EmployeeDto, Employee>();
+            CreateMap<Employee, EmployeePersonalDto>();
+            CreateMap<Employee, ManagerDto>();
+            CreateMap<Employee, EmployeeManagerDto>();
         }
     }
 }

@@ -1,21 +1,22 @@
 ﻿
-namespace Employees.Models
+namespace Employees.DtoModels
 {
+
     using System;
     using System.Collections.Generic;
 
-    public class Employee
+    public class EmployeePersonalDto
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public decimal Salary { get; set; }
         public DateTime? BirthDay { get; set; }
         public string Address { get; set; }
 
-        public int? ManagerId { get; set; }
-        public Employee Manager { get; set; }
+        public EmployeePersonalDto Manager { get; set; }
 
-        public ICollection<Employee> ManagerEmployees { get; set; }
+        public ICollection<EmployeeDto> ManagerEmployees { get; set; }
+
+        public int ManagerEmployeesCount { get; set; }
     }
 }

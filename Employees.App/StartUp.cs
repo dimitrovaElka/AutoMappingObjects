@@ -12,6 +12,12 @@ namespace Employees.App
     {
         static void Main()
         {
+            using (var db = new EmployeesContext())
+            {
+               // db.Database.EnsureDeleted();
+                db.Database.Migrate();
+            }
+
             var serviceProvider = ConfigureServices();
             var engine = new Engine(serviceProvider);
             engine.Run();

@@ -15,7 +15,7 @@ namespace Employees.App.Command
             this.employeeService = employeeService;
         }
 
-        public void Execute(params string[] args)
+        public string Execute(params string[] args)
         {
             //AddEmployee <firstName> <lastName> <salary> 
             string firstName = args[0];
@@ -23,7 +23,9 @@ namespace Employees.App.Command
             decimal salary = decimal.Parse(args[2]);
             var employeeDto = new EmployeeDto(firstName, lastName, salary);
 
-            
+            employeeService.AddEmployee(employeeDto);
+
+            return $"Employee {firstName} {lastName} succesfully added.";
         }
 
     }
